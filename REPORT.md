@@ -46,7 +46,7 @@ Password reset is currently not implemented.
 #### 8. Account lockout
 Rate limiting is implemented for login attempts. A username has a maximum of 3 password attempts every 30 seconds before
 an account (username) lockout for a maximum of 30 seconds. Note that this introduces a possibility of denial-of-service
-by the server caused by an attacker, as the attacker only needs to attempt 3 logins with a username before that
+caused by an attacker, as the attacker only needs to attempt 3 logins with a username before that
 username is temporarily locked out.
 
 #### 9. Cookie

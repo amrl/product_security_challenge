@@ -1,8 +1,4 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-
-/.vs
-/project/__pycache__
-/__pycache__
-/project/accounts.db
+﻿/.vs
+__pycache__
+*.db
+*.log

@@ -1,4 +1,19 @@
 # Zendesk Product Security
+View the [report](REPORT.md) for feature and implementation details.
+
+### Setup
+Platform: Python 3 on Windows 10
+
+In CMD, run
+```
+$ py -m pip install -r requirements.txt
+$ set FLASK_APP=project
+$ py -m flask run
+```
+Then visit `localhost:5000` on a web browser.
+
+To stop the server, press CTRL+C in CMD.
+
 ### The Zendesk Product Security Challenge
 
 Hello friend,

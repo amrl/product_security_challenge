@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ username }}'s Account
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/main.css')}}">
+{% endblock %}
+
+{% block content %}
+<div class="login-form">
+    <form action="">
+        <h2 class="text-center">Account details</h2>
+        <div class="form-group">
+            <h3 class="text-left">Username: {{ username }}</h3>
+        </div>
+        <div class="form-group">
+            <h3 class="text-left">Email: {{ email }}</h3>
+        </div>
+        <div class="form-group">
+            <a class="btn btn-primary btn-block" href="{{ url_for('auth.logout') }}">Log out</a>
+        </div>
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+    </form>
+</div>
+{% endblock %}

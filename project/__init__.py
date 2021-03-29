@@ -22,6 +22,7 @@ def create_app():
 
     app.config["SECRET_KEY"] = secrets.token_hex(32)
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + DATABASE
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     csrf.init_app(app)
 
     db.init_app(app)

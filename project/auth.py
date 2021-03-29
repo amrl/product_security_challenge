@@ -101,10 +101,6 @@ def logout():
     return redirect(url_for('auth.login'))
 
 
-def sanitize(input):
-    pass
-
-
 '''
 Following GitHub rules:
 Contain only alphanumeric chars or hyphens.

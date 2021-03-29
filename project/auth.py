@@ -3,8 +3,8 @@ from .models import User
 from datetime import datetime
 from flask import Blueprint, render_template, redirect, url_for, request, flash, make_response
 from flask_login import login_user, logout_user, login_required
-from secrets import token_hex
 from werkzeug.security import generate_password_hash, check_password_hash
+import secrets
 
 
 auth = Blueprint("auth", __name__)
@@ -45,7 +45,7 @@ def login():
         login_user(user, remember=remember)
 
         resp = make_response(redirect(url_for("user.account")))
-        resp.set_cookie("cookie", token_hex(32))
+        resp.set_cookie("cookie", secrets.token_hex(32))
         return resp
 
     return render_template("index.html")

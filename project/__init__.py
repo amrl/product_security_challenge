@@ -3,18 +3,24 @@ from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf.csrf import CSRFProtect
 from os import path
-from secrets import token_hex
+import logging
+import secrets
 
 
 DATABASE = "accounts.db"
 db = SQLAlchemy()
+
 csrf = CSRFProtect()
+
+logging.basicConfig(filename="project.log",
+                    level=logging.DEBUG,
+                    format="%(asctime)s %(levelname)s %(name)s : %(message)s")
 
 
 def create_app():
     app = Flask(__name__)
 
-    app.config["SECRET_KEY"] = token_hex(32)
+    app.config["SECRET_KEY"] = secrets.token_hex(32)
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + DATABASE
     csrf.init_app(app)
 
